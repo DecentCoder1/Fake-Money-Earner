@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 id="coins">Money: $0</h1>
+    <script type="text/javascript">
+      var coins = 0;
+      var interval = window.setInterval(function() {
+        coins += 0.01;
+        document.getElementById("coins").innerHTML = "Money: $" + String(coins.toFixed(2));
+      }, 1000);
+    </script>
+  </body>
+</html>
