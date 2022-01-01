@@ -7,10 +7,12 @@
   <body>
     <h1 id="coins">Money: $0</h1>
     <script type="text/javascript">
-      var coins = 0;
+      var coins = parseFloat(localStorage.getItem("coin"));
+      localStorage.setItem("coin", parseFloat(coins).toFixed(4));
       var interval = window.setInterval(function() {
         coins += 0.01;
-        document.getElementById("coins").innerHTML = "Money: $" + String(coins.toFixed(2));
+        localStorage.setItem("coin", parseFloat(coins).toFixed(4))
+        document.getElementById("coins").innerHTML = "Money: $" + parseFloat(localStorage.getItem("coin"));
       }, 1000);
     </script>
   </body>
